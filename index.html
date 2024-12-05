@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 1</title>
+  <!-- Linking external CSS for styles -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <!-- Favicon for the webpage -->
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+</head>
+
+<body>
+
+  <!-- Header section -->
+  <header>
+    <h1>Exercise 1 - Web Page Functionality</h1>
+  </header>
+
+  <!-- Floating Atoms for background decoration -->
+  <div class="atom" style="top: 20%; left: 10%"></div>
+  <div class="atom" style="top: 40%; left: 40%"></div>
+  <div class="atom" style="top: 60%; left: 60%"></div>
+
+  <div class="main-container">
+    <!-- Control buttons for table functionality -->
+    <div class="controls">
+      <!-- Undo Button -->
+      <button id="undoBtn" class="btn" disabled>
+        <i class="fas fa-undo"></i> Undo
+      </button>
+      <!-- Redo Button -->
+      <button id="redoBtn" class="btn" disabled>
+        <i class="fas fa-redo"></i> Redo
+      </button>
+      <!-- Add Row Button -->
+      <button id="addRowBtn" class="btn">
+        <i class="fas fa-plus-circle"></i> Add Row
+      </button>
+      <!-- Remove Row Button -->
+      <button id="removeRowBtn" class="btn">
+        <i class="fas fa-minus-circle"></i> Remove Row
+      </button>
+      <!-- Reset Button -->
+      <button id="resetBtn" class="btn">
+        <i class="fas fa-sync-alt"></i> Reset
+      </button>
+    </div>
+
+    <!-- Divider for visual separation -->
+    <div class="divider"></div>
+
+    <!-- Table container -->
+    <div class="container">
+      <table>
+        <tbody id="tableBody">
+          <!-- Initial table rows -->
+          <tr>
+            <td>
+              <div class="draggable" draggable="true">100</div>
+            </td>
+            <td>
+              <div class="draggable" draggable="true">200</div>
+            </td>
+            <td>
+              <div class="draggable" draggable="true">300</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="draggable" draggable="true">400</div>
+            </td>
+            <td>
+              <div class="draggable" draggable="true">500</div>
+            </td>
+            <td>
+              <div class="draggable" draggable="true">600</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="draggable" draggable="true">700</div>
+            </td>
+            <td>
+              <div class="draggable" draggable="true">800</div>
+            </td>
+            <td>
+              <div class="draggable" draggable="true">900</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Additional floating atoms for background decoration -->
+  <div class="atom" style="top: 20%; left: 10%"></div>
+  <div class="atom" style="top: 40%; left: 40%"></div>
+  <div class="atom" style="top: 60%; left: 60%"></div>
+
+  <!-- Footer section -->
+  <footer>
+    &copy; All rights reserved by
+    <a href="https://in.linkedin.com/in/thaha-mohamed-ar-b021881aa?trk=people-guest_people_search-card"
+      target="_blank">Author</a>
+  </footer>
+
+  <!-- Linking external JavaScript file for functionality -->
+  <script src="script.js"></script>
+</body>
+
+</html>

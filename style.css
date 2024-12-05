@@ -1,0 +1,274 @@
+/* General styling for the page layout */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  height: 100vh;
+  /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e0f7fa;
+  /* Light blue background */
+  overflow: hidden;
+  /* Prevent scrolling */
+}
+
+/* Header styling */
+header {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* Center the header horizontally */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  color: #28a745;
+  /* Green color */
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  z-index: 10;
+  /* Ensure it stays on top */
+}
+
+/* Optional decoration for the header, currently commented out */
+header::after {
+  /* Duplicate styles to create a shadow effect if needed */
+}
+
+/* Animation for floating atoms */
+@keyframes floatingAtoms {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+  }
+}
+
+/* Styling for floating atom elements */
+.atom {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ff3b30;
+  /* Red color */
+  border-radius: 50%;
+  /* Makes it circular */
+  opacity: 0.6;
+  animation: floatingAtoms 8s linear infinite;
+  /* Floating effect */
+}
+
+/* Variations in animation timing for odd and even atoms */
+.atom:nth-child(odd) {
+  animation-duration: 12s;
+  animation-delay: 2s;
+}
+
+.atom:nth-child(even) {
+  animation-duration: 16s;
+  animation-delay: 4s;
+}
+
+/* Main layout container */
+.main-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  /* Space between controls and table */
+  position: relative;
+}
+
+/* Styling for button controls */
+.controls {
+  display: flex;
+  gap: 10px;
+  /* Space between buttons */
+  align-items: center;
+}
+
+/* Button styles */
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  /* Rounded corners */
+  background-color: #28a745;
+  /* Green background */
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Subtle shadow */
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  /* Smooth hover effect */
+}
+
+/* Icon margin inside buttons */
+button i {
+  margin-right: 8px;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #218838;
+  /* Darker green */
+  transform: translateY(-2px) scale(1.05);
+  /* Lift effect */
+}
+
+/* Disabled button styles */
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  /* Show disabled state */
+}
+
+/* Styling for the curved vertical divider */
+.divider {
+  width: 5px;
+  height: 300px;
+  background: linear-gradient(to bottom, #28a745, #ff3b30);
+  /* Green to red gradient */
+  border-radius: 50%;
+  /* Gives a curved appearance */
+  position: relative;
+}
+
+/* Decorative ends of the divider */
+.divider::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -25px;
+  width: 50px;
+  height: 100px;
+  border: 5px solid transparent;
+  border-top: 5px solid #28a745;
+  /* Green arc */
+  border-radius: 50%;
+}
+
+.divider::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  left: -25px;
+  width: 50px;
+  height: 100px;
+  border: 5px solid transparent;
+  border-bottom: 5px solid #ff3b30;
+  /* Red arc */
+  border-radius: 50%;
+}
+
+/* Table container styling */
+.container {
+  border-radius: 12px;
+  /* Rounded corners */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.1);
+  /* Shadow for depth */
+  background-color: #fff;
+  /* White background */
+  padding: 20px;
+  width: 400px;
+  /* Fixed width */
+  z-index: 5;
+  /* Stack above floating atoms */
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  /* Remove gaps between cells */
+}
+
+td {
+  border: 1px solid #ddd;
+  width: 33%;
+  height: 80px;
+  text-align: center;
+  /* Center text and draggable elements */
+  vertical-align: middle;
+  position: relative;
+  background-color: #fff;
+  /* White cell background */
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 -2px 5px rgba(0, 0, 0, 0.05);
+  /* Subtle inset shadow */
+  border-radius: 10px;
+}
+
+/* Hover effect for table cells */
+td:hover {
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.15), inset 0 -4px 10px rgba(0, 0, 0, 0.1);
+  transform: translateZ(10px);
+  /* 3D effect */
+}
+
+/* Styling for draggable elements */
+.draggable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 50px;
+  background-color: #ff3b30;
+  /* Red background */
+  border-radius: 6px;
+  color: white;
+  font-size: 14px;
+  cursor: grab;
+  /* Show draggable state */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Shadow for depth */
+  transition: all 0.3s ease;
+  /* Smooth transition */
+  transform-style: preserve-3d;
+}
+
+/* Active draggable state */
+.draggable:active {
+  cursor: grabbing;
+  opacity: 0.8;
+  /* Reduce opacity */
+}
+
+/* Dragging effect */
+.draggable.dragging {
+  opacity: 0.5;
+  transform: translateZ(10px);
+  /* Depth effect */
+}
+
+/* Footer styling */
+footer {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* Center the footer */
+  font-size: 14px;
+  color: #777;
+  /* Light gray text */
+  text-align: center;
+  z-index: 20;
+}
+
+/* Footer link styling */
+footer a {
+  color: #28a745;
+  /* Green color for links */
+  text-decoration: none;
+}
+
+/* Hover effect for footer links */
+footer a:hover {
+  text-decoration: underline;
+  /* Add underline on hover */
+}
